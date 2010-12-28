@@ -1,0 +1,14 @@
+Utility Function to cache YQL Requests in LocalStorage (for webOS)
+
+Usage:
+
+yqlcache.get({
+	yql: "select * from rss where url='http://feeds.feedburner.com/mobile-tuts-summary",
+	id: 'mobile-tuts-summary',
+	cacheage: (60*60*1000),
+	callback: this.parseResult.bind(this)
+});
+
+Returns an object with object.type = 'freshcache' or 'cached' and object.data = Data from YQL Query (JSON)
+
+Based on https://github.com/codepo8/yql-localcache by Christian Heilmann (@codepo8)
